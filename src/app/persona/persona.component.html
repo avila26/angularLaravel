@@ -1,0 +1,47 @@
+<form action="">
+    <select #idTipoPersona name="idTipoPersona" class="form-select" aria-label="Default select example">
+      <option selected>Seleccione el tipo de Categoria</option>
+      
+      @for (item of datosC; track $index) {
+        <option value="{{item.id}}">{{item.tipo}}</option>
+      }
+    </select>
+
+    <div class="mb-3">
+      <label for="exampleInputDescripcionl1" class="form-label">nombre</label>
+      <input type="text" #nombre name="nombre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required/>
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">apellido</label>
+      <input type="text" #apellido name="apellido" class="form-control" id="exampleInputPassword1">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">cedula</label>
+        <input type="text" #cedula name="cedula" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">correo</label>
+        <input type="text" #correo name="correo" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">telefono</label>
+        <input type="text" #telefono name="telefono" class="form-control" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">especialidad</label>
+        <input type="text" #especialidad name="especialidad" class="form-control" id="exampleInputPassword1">
+      </div>
+   
+      <button type="button" (click)="guardarD(nombre,apellido,cedula,correo,telefono,especialidad,idTipoPersona)">Registrar</button> 
+  
+  </form>
+
+  <div class="input-group mb-3 mt-10" >
+    <input type="date" #buscar name="buscar"  class="form-control" placeholder="Fecha de transaccion" aria-label="Recipient's username" aria-describedby="basic-addon2">
+    <button type="button" (click)="buscalo(buscar)" class="btn btn-dark">Buscar</button>
+  </div>
+
+
+  
